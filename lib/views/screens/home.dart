@@ -127,6 +127,15 @@ class HomeState extends State<Home> {
               child: ListView(
                 shrinkWrap: true,
                 children: [
+                  FadeInImage(
+                    image: NetworkImage(course.image),
+                    placeholder: AssetImage("assets/d.png"),
+                    imageErrorBuilder: (context, error, stackTrace) {
+                      return Image.asset(
+                        "assets/d.png",
+                      );
+                    },
+                  ),
                   Text(
                     course.title,
                     style: TextStyle(fontWeight: FontWeight.bold),
